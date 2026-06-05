@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+  body {
+    margin: 0;
+    font-family: Arial;
+    background: rgb(226, 224, 219)
+  }
+
+  h1 {
+    text-align: center;
+    color: #066454;
+    margin-top: 30px;
+  }
+
+  .Formulario {
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 20px;
+  }
+
+  form {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+  }
+
+  fieldset {
+    border: 1px solid #44b39e;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+
+  legend {
+    font-weight: bold;
+    color: #0b6155;
+  }
+
+  label {
+    display: block;
+    margin: 10px;
+    color: #136154;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1e8678;
+    border-radius: 7px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: #012723;
+    background-color: #def0ea;
+  }
+
+  .sexo div, .interesses div {
+    display: flex;
+    align-items: center;
+    margin: 7px;
+  }
+
+  .sexo input, .interesses input {
+    width: 14px;
+ }
+
+  button {
+    width: 100%;
+    padding: 14px;
+    background-color: #066454;
+    color: white;
+    border-style: solid 1px;
+    border-color: #024e42;
+    border-radius: 10px;
+    font-size: 17px;
+    font-style: bold;
+  }
+
+   button:hover {
+    background-color: #02382f;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+    <h1>Cadastro Geral</h1>
+    <div class="Formulario">
+    <form action="">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            
+            <label for="nome"> Nome </label>
+            <input type="text" id="nome" required minlength="3">
+
+            <label for="email"> Email </label>
+            <input type="email" id="email" required minlength="3">
+
+            <label for="senha"> Senha </label>
+            <input type="password" id="senha" required minlength="8">
+
+            <label for="data_nascimento"> Data de Nascimento </label>
+            <input type="date" id="data_nascimento" required>
+
+            <label for="curso">Curso</label>
+            <select id="curso" required>
+                <option value="" disabled selected>Selecione um curso</option>
+                <option value="ciencia_computacao">Ciência da Computação</option>
+                <option value="administracao">Administração</option>
+                <option value="enfermagem">Enfermagem</option>
+            </select>
+
+            <label>Sexo</label>
+            <div class="sexo">
+                <div>
+                    <input type="radio" id="masculino" name="sexo" value="masculino">
+                    <label for="masculino" style="margin: 0;">Masculino</label>
+                </div>
+                <div>
+                    <input type="radio" id="feminino" name="sexo" value="feminino">
+                    <label for="feminino" style="margin: 0;">Feminino</label>
+                </div>
+            </div>
+
+            <label for="foto">Upload de foto</label>
+            <input type="file" id="foto" accept="image/*">
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferências e Comentários</legend>
+
+            <label>Interesses</label>
+            <div class="interesses">
+                <div>
+                    <input type="checkbox" id="tecnologia" name="interesses" value="tecnologia">
+                    <label for="tecnologia" style="margin: 0;">Tecnologia</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="esportes" name="interesses" value="esportes">
+                    <label for="esportes" style="margin: 0;">Esportes</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="outro" name="interesses" value="outro">
+                    <label for="outro" style="margin: 0;">Outros</label>
+                </div>
+            </div>
+
+            <label for="comentarios">Comentários</label>
+            <textarea id="comentarios" rows="4" placeholder="Deixe seu comentário aqui"></textarea>
+        </fieldset>
+         
+        <button type="submit">Enviar</button>
+    </form>
+    </div>
+</body>
+</html>
